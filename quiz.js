@@ -127,7 +127,7 @@ class TakeQuiz {
 		questionsContainer.innerHTML = `
         <h2 class="answer-the-test" style="color:green; margin:100px 0">your score is: ${this.point}%</h2>      
         `;
-		answerQuestionTitle.innerHTML = "here is your result";
+		answerQuestionTitle.innerHTML = "Here is your Result";
 		timeoutElem.style.display = "none";
 		submitBtn.style.display = "none";
 		cancelBtn.innerHTML = "Back To Home";

@@ -96,7 +96,7 @@ body {
 	display: flex;
 	align-items: center;
 	width: 75%;
-	bacground-color: red;
+	background-color: red;
 }
 .quiz-item div p {
 	margin-left: 10px;

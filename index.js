@@ -7,8 +7,56 @@ if (!localStorage.getItem("quizes"))
 	localStorage.setItem(
 		"quizes",
 		JSON.stringify([
-			{
+		{
 				id: 1,
+				title: "Programming Languages Quiz",
+				description: "Test your knowledge of programming languages and their features. Good luck!",
+				count: 8,
+				timeout: "10",
+				questions: [
+					{ id: 1, title: "JavaScript?", options: ["Java", "C++", "Python", "JavaScript"], correct: "4" },
+					{ id: 2, title: "Python Libraries?", options: ["TensorFlow", "Django", "Ruby on Rails", "Express.js"], correct: "1" },
+					{ id: 3, title: "Version Control System?", options: ["Git", "SVN", "Mercurial", "Apache"], correct: "1" },
+					{ id: 4, title: "Web Development Framework?", options: ["React", "Angular", "Vue.js", "Laravel"], correct: "3" },
+					{ id: 5, title: "Database Management System?", options: ["MySQL", "MongoDB", "Redis", "PostgreSQL"], correct: "2" },
+					{ id: 6, title: "Frontend Framework?", options: ["Bootstrap", "Spring", "Flask", "Node.js"], correct: "1" },
+					{ id: 7, title: "Cloud Computing Platform?", options: ["AWS", "Azure", "Google Cloud", "Heroku"], correct: "3" },
+					{ id: 8, title: "Programming Paradigm?", options: ["Object-Oriented", "Functional", "Procedural", "Scripting"], correct: "2" }
+				],
+			},
+			{
+				id: 2,
+				title: "Cybersecurity Concepts Quiz",
+				description: "Test your knowledge of cybersecurity concepts and best practices. Stay secure!",
+				count: 6,
+				timeout: "8",
+				questions: [
+					{ id: 1, title: "SSL/TLS?", options: ["Secure Socket Layer", "Transport Layer Security", "Simple Security Layer", "Super Secure Language"], correct: "2" },
+					{ id: 2, title: "Firewall Function?", options: ["Packet Filtering", "Data Encryption", "Device Authentication", "User Authorization"], correct: "1" },
+					{ id: 3, title: "Common Password Mistake?", options: ["Using Strong Passwords", "Sharing Passwords", "Regularly Changing Passwords", "Using Two-Factor Authentication"], correct: "2" },
+					{ id: 4, title: "Phishing Attack?", options: ["Denial of Service", "Malware Injection", "Social Engineering", "Network Intrusion"], correct: "3" },
+					{ id: 5, title: "Vulnerability Assessment?", options: ["Penetration Testing", "Code Review", "Security Auditing", "Risk Analysis"], correct: "4" },
+					{ id: 6, title: "Security Protocol?", options: ["SSH", "SMTP", "HTTP", "FTP"], correct: "1" }
+				],
+			},
+			{
+				id: 3,
+				title: "DevOps Practices Quiz",
+				description: "Explore your understanding of DevOps practices and principles. Happy coding!",
+				count: 7,
+				timeout: "9",
+				questions: [
+					{ id: 1, title: "Continuous Integration Tool?", options: ["Jenkins", "Ansible", "Docker", "Kubernetes"], correct: "1" },
+					{ id: 2, title: "Infrastructure as Code (IaC)?", options: ["Chef", "Puppet", "Terraform", "Vagrant"], correct: "3" },
+					{ id: 3, title: "Version Control in DevOps?", options: ["Git", "SVN", "Mercurial", "Perforce"], correct: "1" },
+					{ id: 4, title: "Deployment Automation?", options: ["Capistrano", "Fabric", "Octopus Deploy", "Bamboo"], correct: "3" },
+					{ id: 5, title: "Container Orchestration?", options: ["Docker Swarm", "Mesos", "ECS", "OpenShift"], correct: "4" },
+					{ id: 6, title: "Monitoring and Logging?", options: ["Prometheus", "Grafana", "ELK Stack", "Splunk"], correct: "3" },
+					{ id: 7, title: "DevOps Culture?", options: ["Silos", "Collaboration", "Waterfall", "Isolation"], correct: "2" }
+				],
+			},
+			{
+				id: 4,
 				title: "Capital of Countries Quiz",
 				description: "in this quiz you have to answer which capital is for which countries. good luck ;)",
 				count: 10,
@@ -27,7 +75,7 @@ if (!localStorage.getItem("quizes"))
 				],
 			},
 			{
-				id: 2,
+				id: 5,
 				title: "Most winners of European football league",
 				description: "European Football: Top Division Winners - \nCan you choose the club who has won each European football division the most times?",
 				count: 5,
@@ -41,7 +89,7 @@ if (!localStorage.getItem("quizes"))
 				],
 			},
 			{
-				id: 3,
+				id: 6,
 				title: "Related Words",
 				description: "find which one is not related with the questions word.",
 				count: 5,
