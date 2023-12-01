@@ -115,19 +115,6 @@ body {
 	float: left;
 }
 
-/* copy right */
-
-.copyright {
-	text-align: center;
-	margin: 15px;
-	color: rgb(202, 202, 202);
-}
-.copyright a {
-	text-decoration: none;
-
-	color: rgb(240, 240, 240);
-}
-
 @media screen and (max-width: 480px) {
 	.quiz-item button {
 		padding: 10px;

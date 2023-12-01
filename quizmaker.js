@@ -33,18 +33,19 @@ class QuizMaker {
 		let qAddBtn = document.querySelector("#question-add-btn");
 		qAddBtn.addEventListener("click", (e) => {
 			e.preventDefault();
-			questions.push(this.creatQuestions(count, qId));
-			count--;
-			qId++;
-			if (qId <= tempCount) {
-				document.querySelector("#show-count").innerHTML = `${qId}.`;
-			}
+			if (qId < tempCount) {
+				questions.push(this.createQuestions(qId));
+				qId++;
 
-			/* empty values for next input*/
-			document.querySelector("#create-quiz-question").value = "";
-			document.querySelectorAll(".options").forEach((answer) => {
-				answer.value = "";
-			});
+				/* empty values for next input*/
+				document.querySelector("#show-count").innerHTML = `${qId}.`;
+				document.querySelector("#create-quiz-question").value = "";
+				document.querySelectorAll(".options").forEach((answer) => {
+					answer.value = "";
+				});
+			} else {
+				alert(`Error: you have entered all your questions`);
+			}
 		});
 
 		let title;
@@ -66,31 +67,27 @@ class QuizMaker {
 			alert("your Quiz Added to Quizes");
 		});
 	}
-	creatQuestions(count, id) {
+	createQuestions(id) {
 		let qTitle;
 		let options = [];
 		let qCorrect;
-		if (count > 0) {
-			qTitle = document.querySelector("#create-quiz-question").value;
-			let answers = document.querySelectorAll(".options");
-			answers.forEach((answer) => {
-				options.push(answer.value);
+		qTitle = document.querySelector("#create-quiz-question").value;
+		let answers = document.querySelectorAll(".options");
+		answers.forEach((answer) => {
+			options.push(answer.value);
+		});
+		qCorrect = (function () {
+			let correctOne;
+			let options = document.querySelectorAll(".correctA");
+			options.forEach((option) => {
+				if (option.checked) {
+					correctOne = option.getAttribute("id").slice(7);
+				}
 			});
-			qCorrect = (function () {
-				let correctOne;
-				let options = document.querySelectorAll(".correctA");
-				options.forEach((option) => {
-					if (option.checked) {
-						correctOne = option.getAttribute("id").slice(7);
-					}
-				});
-				return correctOne;
-			})();
+			return correctOne;
+		})();
 
-			return { id: id, title: qTitle, options: options, correct: qCorrect };
-		} else {
-			alert(`Error: you have entered all your questions`);
-		}
+		return { id: id, title: qTitle, options: options, correct: qCorrect };
 	}
 	createTheQuiz(id, title, description, count, timeout, questions) {
 		let newQuiz = new Quiz(id, title, description, count, timeout, questions);
