@@ -33,7 +33,7 @@ class QuizMaker {
 		let qAddBtn = document.querySelector("#question-add-btn");
 		qAddBtn.addEventListener("click", (e) => {
 			e.preventDefault();
-			if (qId < tempCount) {
+			if (qId <= tempCount) {
 				questions.push(this.createQuestions(qId));
 				qId++;
 
@@ -95,7 +95,7 @@ class QuizMaker {
 	}
 	updateLocalStorage() {
 		let i = 1;
-		let allQuizes = JSON.parse(localStorage.getItem("quizes"));
+		let allQuizes = JSON.parse(localStorage.getItem("quizes")) || [];
 		quizes.forEach((q) => {
 			allQuizes.push(q);
 		});
@@ -104,6 +104,26 @@ class QuizMaker {
 			i++;
 		});
 		localStorage.setItem("quizes", JSON.stringify(allQuizes));
+
+		// code to make Quiz title unique
+		// let uniqueTitles = new Set();
+
+		// Filter out quizzes with duplicate titles
+		// let filteredQuizes = allQuizes.filter((quiz) => {
+		// 	if (!uniqueTitles.has(quiz.title)) {
+		// 		uniqueTitles.add(quiz.title);
+		// 		return true;
+		// 	}
+		// 	return false;
+		// });
+
+		// // Update the IDs of the quizzes
+		// filteredQuizes.forEach((quiz) => {
+		// 	quiz.id = i;
+		// 	i++;
+		// });
+
+		// localStorage.setItem("quizes", JSON.stringify(filteredQuizes));
 	}
 }
 
