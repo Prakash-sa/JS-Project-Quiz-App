@@ -35,19 +35,19 @@ class TakeQuiz {
 		let thisTemp=this;
 		setInterval(timeoutHandler, 1000);
 		function timeoutHandler() {
-					if (sec == 0 && min == 0) {
-			timeoutElem.innerHTML = `${min}:${sec}`;
-			thisTemp.getQuizResult();
-			clearInterval();
-      } else if (sec < 0) {
-        min--;
-        sec = 59;
-        timeoutElem.innerHTML = `${min}:${sec}`;
-        sec--;
-      } else {
-        timeoutElem.innerHTML = `${min}:${sec}`;
-        sec--;
-      }
+			if (sec == 0 && min == 0) {
+				timeoutElem.innerHTML = `${min}:${sec}`;
+				thisTemp.getQuizResult();
+				clearInterval();
+			} else if (sec < 0) {
+				min--;
+				sec = 59;
+				timeoutElem.innerHTML = `${min}:${sec}`;
+				sec--;
+			} else {
+				timeoutElem.innerHTML = `${min}:${sec}`;
+				sec--;
+			}
 		}
 	}
 	generateQuestions() {
@@ -56,31 +56,31 @@ class TakeQuiz {
 			questionsContainer.insertAdjacentHTML(
 				"beforeend",
 				`
-        <div class="question">
-        <p class="question-number">${question.id}</p>
-        <div>
-            <p class="question-title">.${question.title}</p>
-            <div class="question-answers">
-                <div>
-                    <input type="radio" id="${question.id}answer1" name="${question.id}answer" />
-                    <label for="${question.id}answer1">1.${question.options[0]}</label>
-                </div>
-                <div>
-                    <input type="radio" id="${question.id}answer2" name="${question.id}answer" />
-                    <label for="${question.id}answer2">2.${question.options[1]}</label>
-                </div>
-                <div>
-                    <input type="radio" id="${question.id}answer3" name="${question.id}answer" />
-                    <label for="${question.id}answer3">3.${question.options[2]}</label>
-                </div>
-                <div>
-                    <input type="radio" id="${question.id}answer4" name="${question.id}answer" />
-                    <label for="${question.id}answer4">4.${question.options[3]}</label>
-                </div>
-            </div>
-        </div>
-    </div>
-        `
+				<div class="question">
+					<p class="question-number">${question.id}</p>
+					<div>
+						<p class="question-title">.${question.title}</p>
+						<div class="question-answers">
+							<div>
+								<input type="radio" id="${question.id}answer1" name="${question.id}answer" />
+								<label for="${question.id}answer1">1.${question.options[0]}</label>
+							</div>
+							<div>
+								<input type="radio" id="${question.id}answer2" name="${question.id}answer" />
+								<label for="${question.id}answer2">2.${question.options[1]}</label>
+							</div>
+							<div>
+								<input type="radio" id="${question.id}answer3" name="${question.id}answer" />
+								<label for="${question.id}answer3">3.${question.options[2]}</label>
+							</div>
+							<div>
+								<input type="radio" id="${question.id}answer4" name="${question.id}answer" />
+								<label for="${question.id}answer4">4.${question.options[3]}</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				`
 			);
 		});
 	}

@@ -104,26 +104,6 @@ class QuizMaker {
 			i++;
 		});
 		localStorage.setItem("quizes", JSON.stringify(allQuizes));
-
-		// code to make Quiz title unique
-		// let uniqueTitles = new Set();
-
-		// Filter out quizzes with duplicate titles
-		// let filteredQuizes = allQuizes.filter((quiz) => {
-		// 	if (!uniqueTitles.has(quiz.title)) {
-		// 		uniqueTitles.add(quiz.title);
-		// 		return true;
-		// 	}
-		// 	return false;
-		// });
-
-		// // Update the IDs of the quizzes
-		// filteredQuizes.forEach((quiz) => {
-		// 	quiz.id = i;
-		// 	i++;
-		// });
-
-		// localStorage.setItem("quizes", JSON.stringify(filteredQuizes));
 	}
 }
 
